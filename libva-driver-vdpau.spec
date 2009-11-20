@@ -9,6 +9,7 @@ Source0:	http://www.splitted-desktop.com/~gbeauchesne/vdpau-video/vdpau-video-%{
 URL:		http://www.freedesktop.org/wiki/Software/vaapi
 BuildRequires:	libva-devel
 BuildRequires:	libvdpau-devel
+BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -35,4 +36,4 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS NEWS README
-%attr(755,root,root) %{_libdir}/%{name}/dri/*.so
+%attr(755,root,root) %{_libdir}/libva/dri/*.so
