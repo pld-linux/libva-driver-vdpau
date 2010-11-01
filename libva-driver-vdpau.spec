@@ -8,6 +8,9 @@ Group:		Libraries
 Source0:	http://www.splitted-desktop.com/~gbeauchesne/vdpau-video/vdpau-video-%{version}.tar.gz
 # Source0-md5:	7d8e77a41352ceaa3fc20d137eb4f8b9
 URL:		http://www.freedesktop.org/wiki/Software/vaapi
+BuildRequires:	autoconf >= 2.57
+BuildRequires:	automake
+BuildRequires:	libtool
 BuildRequires:	libva-devel
 BuildRequires:	libvdpau-devel
 BuildRequires:	pkgconfig
@@ -23,6 +26,10 @@ Sterownik oparty na VDPAU dla VAAPI.
 %setup -q -n vdpau-video-%{version}
 
 %build
+%{__libtoolize}
+%{__aclocal}
+%{__autoconf}
+%{__automake}
 %configure
 
 %{__make}
