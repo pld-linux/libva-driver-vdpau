@@ -23,8 +23,7 @@ Sterownik oparty na VDPAU dla VAAPI.
 %setup -q -n vdpau-video-%{version}
 
 %build
-%configure \
-	--with-drivers-path=%{_libdir}/%{name}/dri
+%configure
 
 %{__make}
 
@@ -34,10 +33,15 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/libva/dri/*.la
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS NEWS README
-%attr(755,root,root) %{_libdir}/libva/dri/*.so
+%attr(755,root,root) %{_libdir}/libva/dri/vdpau_drv_video.so
+# symlinks
+%attr(755,root,root) %{_libdir}/libva/dri/nvidia_drv_video.so
+%attr(755,root,root) %{_libdir}/libva/dri/s3g_drv_video.so
