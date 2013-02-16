@@ -1,12 +1,12 @@
 Summary:	VDPAU driver for VAAPI
 Summary(pl.UTF-8):	Sterownik VDPAU dla VAAPI
 Name:		libva-driver-vdpau
-Version:	0.7.3
+Version:	0.7.4
 Release:	1
 License:	GPL v2+
 Group:		Libraries
-Source0:	http://www.splitted-desktop.com/~gbeauchesne/vdpau-video/vdpau-video-%{version}.tar.gz
-# Source0-md5:	18870e007ecdc50a528861fa55556364
+Source0:	http://www.freedesktop.org/software/vaapi/releases/libva-vdpau-driver/libva-vdpau-driver-%{version}.tar.bz2
+# Source0-md5:	5ec6d452d2dd307434ea3d32da49c3e5
 URL:		http://www.freedesktop.org/wiki/Software/vaapi
 BuildRequires:	OpenGL-GLX-devel
 BuildRequires:	autoconf >= 2.57
@@ -24,7 +24,7 @@ A VDPAU-based backend for VA API.
 Sterownik oparty na VDPAU dla VAAPI.
 
 %prep
-%setup -q -n vdpau-video-%{version}
+%setup -q -n libva-vdpau-driver-%{version}
 
 %build
 %{__libtoolize}
