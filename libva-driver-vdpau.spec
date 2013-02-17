@@ -22,6 +22,7 @@ BuildRequires:	pkgconfig
 # more specific than libva package version
 BuildRequires:	pkgconfig(libva-x11) >= 0.31.0
 BuildRequires:	pkgconfig(libva-glx) >= 0.32.0
+Requires:	libva >= 1.0.9
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
