@@ -14,7 +14,9 @@ BuildRequires:	OpenGL-GLX-devel
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
 BuildRequires:	libtool
-BuildRequires:	libva-devel >= 1.0.9
+BuildRequires:	libva-devel
+BuildRequires:	libva-glx-devel >= 1.0.9
+BuildRequires:	libva-x11-devel >= 1.0.3
 BuildRequires:	libvdpau-devel
 BuildRequires:	pkgconfig
 # more specific than libva package version
