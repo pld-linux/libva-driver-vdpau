@@ -7,6 +7,7 @@ License:	GPL v2+
 Group:		Libraries
 Source0:	http://www.freedesktop.org/software/vaapi/releases/libva-vdpau-driver/libva-vdpau-driver-%{version}.tar.bz2
 # Source0-md5:	5ec6d452d2dd307434ea3d32da49c3e5
+Patch0:         %{name}-with-GL_GLEXT_VERSION-85.patch
 URL:		http://www.freedesktop.org/wiki/Software/vaapi
 BuildRequires:	OpenGL-GLX-devel
 BuildRequires:	autoconf >= 2.57
@@ -25,6 +26,7 @@ Sterownik oparty na VDPAU dla VAAPI.
 
 %prep
 %setup -q -n libva-vdpau-driver-%{version}
+%patch0 -p1
 
 %build
 %{__libtoolize}
