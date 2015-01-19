@@ -2,14 +2,15 @@ Summary:	VDPAU driver for VAAPI
 Summary(pl.UTF-8):	Sterownik VDPAU dla VAAPI
 Name:		libva-driver-vdpau
 Version:	0.7.4
-Release:	2
+Release:	3
 License:	GPL v2+
 Group:		Libraries
 Source0:	http://www.freedesktop.org/software/vaapi/releases/libva-vdpau-driver/libva-vdpau-driver-%{version}.tar.bz2
 # Source0-md5:	5ec6d452d2dd307434ea3d32da49c3e5
-Patch0:         %{name}-with-GL_GLEXT_VERSION-85.patch
-Patch1:         %{name}-am.patch
+Patch0:		%{name}-with-GL_GLEXT_VERSION-85.patch
+Patch1:		%{name}-am.patch
 Patch2:		%{name}-drop-h264-api.patch
+Patch3:		libva-vdpau-driver-0.7.4-fix_type.patch
 URL:		http://www.freedesktop.org/wiki/Software/vaapi
 BuildRequires:	OpenGL-GLX-devel
 BuildRequires:	autoconf >= 2.57
@@ -37,6 +38,7 @@ Sterownik oparty na VDPAU dla VAAPI.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 
 %build
 %{__libtoolize}
@@ -45,6 +47,7 @@ Sterownik oparty na VDPAU dla VAAPI.
 %{__autoheader}
 %{__automake}
 %configure \
+	--enable-glx \
 	--disable-silent-rules
 
 %{__make}
