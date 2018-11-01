@@ -2,7 +2,7 @@ Summary:	VDPAU driver for VAAPI
 Summary(pl.UTF-8):	Sterownik VDPAU dla VAAPI
 Name:		libva-driver-vdpau
 Version:	0.7.4
-Release:	3
+Release:	4
 License:	GPL v2+
 Group:		Libraries
 Source0:	http://www.freedesktop.org/software/vaapi/releases/libva-vdpau-driver/libva-vdpau-driver-%{version}.tar.bz2
